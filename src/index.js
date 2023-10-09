@@ -2,6 +2,35 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
 
+const skills = [
+  {
+    skill: 'HTML + CSS',
+    level: 'Intermediate',
+    color: ''
+  },
+  {
+    skill:  ,
+    level:  ,
+    color:  ,
+  },
+  {
+    skill:  ,
+    level:  ,
+    color:  ,
+  },
+  {
+    skill:  ,
+    level:  ,
+    color:  ,
+  },
+  {
+    skill:  ,
+    level:  ,
+    color:  ,
+  }
+]
+
+
 function App() {
   return (
     <div className="card">
