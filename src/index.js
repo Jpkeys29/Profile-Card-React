@@ -4,30 +4,35 @@ import "./styles.css";
 
 const skills = [
   {
+    skill: 'Python',
+    level:  'Intermediate',
+    color:  '#FF5733'
+  },
+  {
+    skill:  'Django',
+    level:  'Intermediate',
+    color:  '#FF7533'
+  },
+  {
+    skill:  'Flask',
+    level:  'Intermediate',
+    color:  '#FFA833'
+  },
+  {
+    skill: 'JavaScript' ,
+    level:  'Beginner',
+    color:  '#33CEFF'
+  },
+  {
+    skill:  'React',
+    level:  'Beginner',
+    color:  '#33A7FF'
+  },
+  {
     skill: 'HTML + CSS',
     level: 'Intermediate',
-    color: ''
+    color: '#FF8433'
   },
-  {
-    skill:  ,
-    level:  ,
-    color:  ,
-  },
-  {
-    skill:  ,
-    level:  ,
-    color:  ,
-  },
-  {
-    skill:  ,
-    level:  ,
-    color:  ,
-  },
-  {
-    skill:  ,
-    level:  ,
-    color:  ,
-  }
 ]
 
 
@@ -64,19 +69,23 @@ function Intro() {
 function SkillList() {
   return (
     <div className="skill-list">
-      <Skill skill="React" emoji="😎" color="blue" />
+      {skills.map(skill=><Skill skill={skill.skill} level={skill.level} color={skill.color} />)}
+      {/* <Skill skill="React" emoji="😎" color="blue" />
       <Skill skill="Python" emoji="🐍" color="red" />
       <Skill skill="Django" emoji="👷🏻‍♂️" color="yellow" />
       <Skill skill="JavaScript" emoji="👨🏻‍💻" color="orangered" />
-      <Skill skill="HTML & CSS" emoji="👨🏻‍🎨" color="green" />
+      <Skill skill="HTML & CSS" emoji="👨🏻‍🎨" color="green" /> */}
     </div>
   );
 }
-function Skill(props) {
+function Skill({ skill, level, color}) {
   return (
-    <div className="skill" style={{ backgroundColor: props.color }}>
-      <span>{props.skill}</span>
-      <span>{props.emoji}</span>
+    <div className="skill" style={{ backgroundColor: color }}>
+      <span>{skill}</span>
+      <span>
+        {level === "beginner" && "👶"}
+        {level === "intermediate" && "💪"}
+      </span>
     </div>
   );
 }
